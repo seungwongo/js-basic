@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //백화점 주차요금 계산 함수 만들기
+    //함수명 - calParkingCost
+    //파라미터1 - 총주차시간 (예제 3-3시간)
+    //파라미터2 - 총구매금액 
+    //new Date()
+    //getDay
+
+    //
+
+    // console.log((new Date()).getDay());
+
+    function calParkingCost(parkingHours, purchaseAmount) {
+      //주말인지, 평일인지 구한다.
+      const isWeekend = ((new Date()).getDay() % 6) == 0 ? true : false;
+      // const isWeekend = ((new Date()).getDay() == 0 || (new Date()).getDay() == 6)? true : false;
+      //사용자가 입력한 총 주차 시간을 10분단위로 바꾼다.
+      // var parkingMinutes = parkingHours * 60;
+
+
+      if (purchaseAmount >= 150000) {
+        parkingHours = parkingHours - 3;
+      } else if (purchaseAmount >= 100000) {
+        parkingHours = parkingHours - 2;
+      } else if (purchaseAmount >= 50000) {
+        parkingHours = parkingHours - 1;
+      }
+
+
+
+      if (parkingHours <= 0) {
+        return 0;
+      } else {
+        var parkingMinutes = parkingHours * 60; //120
+
+        if (parkingMinutes <= 30) {
+          return isWeekend ? 5000 : 2000;
+        } else {
+          //60분 - 30분 2000원 + 30/10*1000
+          //120분 - 30분 , 90/10*1000
+          return (isWeekend ? 5000 : 2000) + ((parkingMinutes - 30) / 10) * (isWeekend ? 2000 : 1000);
+        }
+      }
+    }
+
+    console.log(calParkingCost(4, 100000));
+  </script>
+</body>
+
+</html>
