@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var txt = "abcdefghijklmnopqrstuvwxyz";
+    console.log(txt.length);
+
+    var txt = "Please locate where locate occur!";
+    console.log(txt.lastIndexOf("locate"));
+    var tel = "010-0303-2222";
+
+
+
+    if (tel.indexOf("-") > -1) {
+      console.log("")
+    }
+
+    //slice - 두개의 파라미터. 첫번째 - 시작인덱스번호, 두번째 - 종료인덱스번호 (옵션)
+    var text = "Apple, Banana, Kiwi";
+
+
+    console.log(text.slice(7, 13));
+    console.log(text.slice(7));
+    console.log(text.slice(-12));
+
+    var txt = "9904121";
+    console.log(txt.slice(-1));
+
+    //substring == slice
+    console.log(text.substring(7, 13));
+    console.log(text.substring(7));
+
+    //substr = 첫번째 - 시작인덱스번호, 두번째 - 잘나낼 길이
+    var date = "20210624";
+    var year = date.slice(0, 4);
+    var year2 = date.substring(0, 4);
+    var year3 = date.substr(0, 4);
+
+    var month = date.slice(4, 6);
+    var month2 = date.substring(4, 6);
+    var month3 = date.substr(4, 2);
+
+    var day = date.slice(-2);
+    var day2 = date.substring(6);
+    var day3 = date.substr(6, 2);
+
+    var date = "202134.1320.322324"; //2021-10-24
+    date.substring(0, date.indexOf("."));
+    date.substring(date.indexOf(".") + 1, date.lastIndexOf("."));
+    var year = date.substr(0, 4);
+    var month = date.substr(5, 2);
+    var day = date.slice(-2);
+
+    console.log(year + "-" + month + "-" + day);
+
+    //replace
+    var date = date.replace(".", "-");
+    // var date = date.replace(".", "-");
+    // console.log(date);
+
+    console.log(date.replace(/\./g, "-"));
+
+    //toUpperCase()
+    var txt = "Hello World";
+    console.log(txt.toUpperCase());
+
+    //toLowerCase();
+    console.log(txt.toLowerCase());
+
+    //concat() - 문자열
+    // +
+    var text1 = "Hello";
+    var text2 = "World";
+    console.log(text1.concat(" ", text2, "!"));
+
+    //trim()
+    var text = "      Hello World      ";
+    console.log(text);
+    console.log(text.trim());
+
+    //padStart(). 첫번째 - 문자열의 총길이, 두번째 - 뭘로 채울래???
+    var txt = "9";
+    // console.log(txt.padStart(4, 0));
+
+    // 첫번째 문자열, 두번째 총길이, 세번째 뭘로 채울지..
+    // 함수 - fillChar
+    //
+
+    function fillChar(str, len, s) {
+      //"9"
+      //str.length = 1
+      //while(1 < 4){
+      // 0 + "9"
+      //str = "09"
+      //}
+      //2 < 4
+      //str = 0 + "09";
+      //str = "009";
+      //3<4
+      //str = 0 + "009";
+      //str = "0009";
+
+      while (str.length < len) {
+        str = s + str;
+      }
+
+      return str;
+    }
+
+    console.log(fillChar("9", 4, 0));
+
+    //padEnd
+    var txt = "5";
+    console.log(txt.padEnd(4, 0));
+
+    //charAt()
+    var txt = "Hello World";
+    console.log(txt.charAt(0));
+
+    //charCodeAt()
+    console.log(txt.charCodeAt(0));
+
+    //split()
+    //2021-06-25
+    var date = "2021-06-25";
+    var arr = date.split("-");
+    console.table(arr);
+
+    // console.log(arr.join("/"))
+
+    // var tag = "#서울#양평#한경닷컴#개발자품격#잘한다";
+    // console.table(tag.split("#"));
+
+    //배열 join
+
+    //startsWith()
+    var url = "http://naver.com";
+
+    if (url.startsWith("http://") || url.startsWith("https://")) {
+
+    }
+
+    //endsWith()
+    var imageFile = "logo.jpg";
+    var isRightImageExtension = imageFile.endsWith(".jpg") ? true : imageFile.endsWith(".png") ? true : false;
+    // if(imageFile.endsWith(".jpg") || imageFile.endsWith(".png")) {
+
+    // }
+  </script>
+</body>
+
+</html>

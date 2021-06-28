@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //반복문 for-loop
+    var brands = ["애플", "구글", "페이스북", "아마존", "삼성", "LG"];
+
+    // for (var index in brands) {
+    //   console.log(brands[index]);
+    // }
+
+    // var length = brands.length;
+
+    // for (var i = 0; i < length; i++) {
+    //   console.log(brands[i]); //애플,구글,페이스북,아마존,삼성
+    // }
+
+    // console.log(brands[0]);
+    // console.log(brands[1]);
+    // console.log(brands[2]);
+    // console.log(brands[3]);
+    // console.log(brands[4]);
+
+    //for-loop
+    // for(코드1; 조건 ; 코드2){
+    //   //코드블록
+    // }
+    brands.push("개발자의품격");
+
+    var length = brands.length;
+
+    // for (var i = 0; i < length; i++) {
+    //   console.log(brands[i]); //애플,구글,페이스북,아마존,삼성
+    // }
+
+    //for-in
+    // let person = {
+    //   firstName: "John",
+    //   lastName: "Doe",
+    //   age: 40,
+    //   tel: "010203030303",
+    //   email: "aaaa@mail.com"
+    // };
+
+    // for (var key in person) {
+    //   // console.log(key);
+    //   console.log(key, person[key]);
+    // }
+
+    // for (var index in brands) {
+    //   console.log(brands[index]);
+    // }
+
+    //for-of
+    for (var brand of brands) {
+      console.log(brand);
+    }
+
+
+    // var lang = "JavaScript";
+    // for (var c of lang) {
+    //   console.log(c);
+    // }
+  </script>
+
+
+
+  <script src="user_data.js"></script>
+  <script>
+    //문제1. userList의 데이터에서 gender가 male 인 사람만 
+    //새 배열 maleUserList에 담고 console창에 출력하세요.
+
+    var maleUserList = [];
+    for (var user of userList) {
+      if (user["gender"] == "male") {
+        maleUserList.push(user);
+      }
+    }
+
+    // console.table(maleUserList);
+
+    // console.table(userList.filter(u => u.gender == "male"));
+
+
+
+    //문제2. 음료자판기 문제. productList에서 inputCoin으로 구매할 수 있는 음료 목록을 출력하세요.
+    var productList = [{
+        name: "솔의눈",
+        price: 700
+      },
+      {
+        name: "커피",
+        price: 700
+      },
+      {
+        name: "파워레이드",
+        price: 1200
+      },
+      {
+        name: "오렌지",
+        price: 1000
+      },
+      {
+        name: "보리차",
+        price: 1200
+      },
+      {
+        name: "밀키스",
+        price: 800
+      }
+    ];
+
+    var inputCoin = 800;
+
+    var output = [];
+    for (var product of productList) {
+      if (product.price <= inputCoin) {
+        output.push(product);
+      }
+    }
+
+    // console.table(output);
+
+    var inputPrice = 7000; //사용자가 넣은 지폐 금액
+    var coinUnit = 500; //반환할 500원짜리 동전
+    var coinCount = 0; //반환될 500원짜리 총 개수를 담을 변수
+    while (inputPrice > 0) { //사용자가 넣은 금액이 0이 될 때 까지
+      inputPrice = inputPrice - coinUnit; //inputPrice 금액이 500원씩 줄어 듬
+      coinCount++; //반복문이 한번 돌때 마다 반환되는 500원짜리 동전 수를 증가 시킴
+    }
+
+    console.log(coinCount); //500원짜리 총 개수
+
+    //while문, do-while문
+    var i = 11;
+    var point = 0;
+
+    while (point <= 100) {
+      //코드작성
+      point += 4;
+      console.log(i);
+      // i++;
+    }
+
+    var i = 11;
+    do {
+      console.log(i);
+      i++;
+    } while (i <= 10);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+    integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+  <script>
+    //Date() 
+    // var d = new Date(2020, 5, 24, 13, 23, 12, 000);
+    // console.log(d.getFullYear());
+
+    //함수명 - getIntervalDate(intervalDay)
+    //오늘을 기준으로 몇일 후, 몇일 전 그 날짜.
+    //정수 - 양수, 음수
+    //return - 년도/월/일
+
+    function getIntervalDate(intervalDay, format) {
+      var now = new Date();
+      // return new Date(now.getTime());
+      var d = new Date(now.getTime() + ((60 * 60 * 24 * 1000) * intervalDay));
+      var year = d.getFullYear();
+
+      var month = d.getMonth() + 1;
+      var day = d.getDate();
+
+      return format.replace("YYYY", year).replace("MM", month.toString().padStart(2, 0)).replace("DD", day);
+    }
+
+    console.log(getIntervalDate(-5, "YYYY-MM-DD"));
+    console.log(getIntervalDate(-5, "YYYY.MM.DD"));
+    console.log(getIntervalDate(-5, "MM.DD.YYYY"));
+
+
+
+    var now = new Date();
+    // // now.getTime();
+
+    // var d = new Date(0);
+    // // console.log(d);
+    // var d = new Date(now.getTime());
+    // console.log(d);
+
+    var d = new Date();
+    // console.log(d);
+
+    var year = d.getFullYear();
+    // d.setFullYear(2020)
+    // console.log("year", year);
+
+    var month = d.getMonth();
+    // d.setMonth(6)
+    // console.log("month", month);
+
+    // const monthName = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"];
+    // console.log(monthName[month]);
+
+
+    var hour = d.getHours();
+    // d.setHours()
+    // console.log("hour", hour);
+
+    var minute = d.getMinutes();
+    // d.
+    // console.log("minute", minute);
+
+    var second = d.getSeconds();
+    // console.log("second", second);
+
+    var milliseconds = d.getMilliseconds();
+    // console.log("milliseconds", milliseconds);
+
+
+    // console.log(d.getTime());
+
+    // // var day = d.getDate();
+    // // console.log("day", day);
+
+    // var dayNameIndex = d.getDay(); //0-일요일, 1-월요일
+    // console.log(dayNameIndex);
+  </script>
+</body>
+
+</html>

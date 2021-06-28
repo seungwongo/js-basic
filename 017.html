@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="user_data.js"></script>
+  <script>
+    // //함수
+
+    // //
+    // //n1 -
+    // //n2 - 
+    // //return 
+    // function add(n1, n2) {
+    //   return n1 + n2;
+    // }
+
+    // var sum = 10 + 2;
+    // var sum = 13 + 4;
+
+    // function tax(amount) {
+    //   return amount * 0.12;
+    // }
+
+
+
+    // // function calculator(n1, n2) {
+    // //   let y = n1 + n2;
+    // //   return y;
+    // // }
+
+    // // function getFullName(firstName, lastName) {
+    // //   return firstName + " " + lastName;
+    // // }
+
+    // // getFullName("John", "Doe");
+
+    // // let sum = add(10, 4);
+    // // console.log(sum);
+
+    // // console.log(add(12, 7));
+    // // console.log(add(43, 3));
+
+    // // console.log(10 + 4);
+    // // console.log(12 + 7);
+
+
+
+
+
+
+
+
+    // //문제1. firstName과 lastName을 입력받고 fullName을 반환하는 함수
+
+
+
+    // //문제2. 음료자판기 문제를 함수로. 사용자가 넣은 돈은 파라미터로 받고
+    // //구매할 수 있는 음료 리스트 반환하기
+    // //function showProductList(inputCoin){
+
+    // // }
+
+    // //함수를 선언합니다.
+    // //함수 이름은 getProductList
+    // //파라미터는 inputCoin
+    // //inputCoin으로 구매할 수 있는 음료 목록을 productList 배열에서 추출해서
+    // //새로운 배열로 만들어서
+    // //그녀석을 return 해주세요.
+    // //받는 쪽에서는 var,let outputList = 
+    // //console.table(outputList);
+
+    // var a = [1, 2, 3, 4]
+    // var productList = [ // 음료 리스트
+    //   {
+    //     name: "솔의눈",
+    //     price: 700
+    //   },
+    //   {
+    //     name: "커피",
+    //     price: 700
+    //   },
+    //   {
+    //     name: "파워레이드",
+    //     price: 1200
+    //   },
+    //   {
+    //     name: "오렌지",
+    //     price: 1000
+    //   },
+    //   {
+    //     name: "보리차",
+    //     price: 1200
+    //   },
+    //   {
+    //     name: "밀키스",
+    //     price: 800
+    //   }
+    // ];
+
+    // let inputCoin = 800; //고객이 음료 구매를 위한 투입한 총 금액
+    // let len = productList.length; //배열 productList에 담긴 요소의 길이
+    // let outputList = []; //고객이 구매할 수 있는 음료 목록을 저장할 새로운 배열
+    // for (var i = 0; i < len; i++) { //productList의 모든 요소에 대한 접근
+    //   if (productList[i].price <= inputCoin) { //음료 가격이 고객이 투입한 금액 보다 같거나 작으면
+    //     outputList.push(productList[i]); //outputList에 추가
+    //   }
+    // }
+
+    // //1. 사용자가 입력한 금액을 살수 있는 음료 목록을 담을 새로운 배열을 하나 만든다.
+    // //2. 전체 음료 목록을 반복을 돌리면서 음료의 가격이 사용자가 입력한 금액보다 같거나 작으면, 
+    // // 이 음료를 1번에서 정의한 새로운 배열에 추가한다.
+    // //3. 1번에서 정의한 새로운 배열을 반환한다(return)
+
+
+    // // function getProductList(inputCoin) {
+    // //   var output = [];
+    // //   for (var product of productList) {
+    // //     if (product.price <= inputCoin) {
+    // //       output.push(product);
+    // //     }
+    // //   }
+
+    // //   return output;
+    // // }
+
+    // function getProductList(inputCoin) {
+    //   return productList.filter(function (product) {
+    //     return product.price <= inputCoin;
+    //   });
+    // }
+
+    // console.table(getProductList(800));
+
+
+    // // var product = {
+    // //     name: "파워레이드",
+    // //     price: 1200
+    // //   };
+
+    // function getProductList(inputCoin) {
+    //   var outputList = [];
+    //   for (var product of productList) {
+    //     if (product.price <= inputCoin) {
+    //       outputList.push(product);
+    //     }
+    //   }
+
+    //   // console.log(outputList);
+
+    //   return outputList;
+    // }
+
+
+
+    // let output = getProductList(1000);
+    // // console.table(output);
+
+    // // var x = 5;
+    // // var z = x + y;
+    // // var y =3;
+
+    // // function getProductList(inputCoin) {
+    // //   let outputList = [];
+    // //   for (let product of productList) {
+    // //     if (product.price <= inputCoin) {
+    // //       outputList.push(product);
+    // //     }
+    // //   }
+
+    // //   return outputList;
+    // // }
+
+    // // var getProductList = function (inputCoin) {
+    // //   let outputList = [];
+    // //   for (let product of productList) {
+    // //     if (product.price <= inputCoin) {
+    // //       outputList.push(product);
+    // //     }
+    // //   }
+
+    // //   return outputList;
+    // // };
+
+
+
+
+
+    // // let getProduct = (inputCoin) => productList.filter(p => p.price <= inputCoin);
+    // // console.table(getProduct(1000));
+
+
+
+    // //문제3. 사용자 리스트에서 gender 파라미터를 받고 male, female 해당하는
+    // //데이터만 반환하기
+    // //함수명 getUserList
+    // //파라미터명 gender
+    // //return outputUserList
+    // //호출 getUserList("male");
+    // //호출 getUserList("female"); 
+
+    // function getUserList(gender, fromAge, toAge) {
+    //   var outputList = [];
+    //   for (var user of userList) {
+    //     if (user.gender == gender && (user.age <= fromAge || user.age >= toAge)) {
+    //       outputList.push(user);
+    //     }
+    //   }
+
+    //   return outputList;
+    // }
+
+    // let maleUserList = getUserList("male", 25, 35);
+    // // console.table(maleUserList);
+
+    // // let femaleUserList = getUserList("female");
+    // // console.table(femaleUserList);
+
+    // //새로운 배열을 저장할 배열을 하나 만듭니다.
+    // //반복문을 통해서 사용자 정보를 하나씩 읽어 옵니다.
+    // //사용자 정보에서 성별이 파라미터로 받은 성별과 일치하는지 확인합니다.
+    // //사용자 정보에서 나이가 파라미터로 받은 나이와 일치하는지 확인합니다.
+    // //2개의 조건이 모두 만족할때만 그 사용자 정보를 새로운 배열에 추가합니다.
+    // //반복문을 모두 수행하고 나서 최종 배열을 반환합니다.
+
+
+    // // function getUserList(gender, age) {
+    // //   var outputList = [];
+    // //   for (var user of userList) {
+    // //     if (user.gender == gender && user.age == age) {
+    // //       outputList.push(user);
+    // //     }
+    // //   }
+
+    // //   return outputList;
+    // // }
+
+    // // let ageUserList = getUserList("male", 30);
+    // // console.table(ageUserList);
+
+
+
+
+
+
+    // //문제4. 계산기 만들기. 숫자 2개에 대한 더하기/빼기/곱하기/나누기를 수행하는 함수
+    // //파라미터로 숫자 2개와 operator인 +,-,*,/ 를 입력받고 계산 수행
+    // //함수명 calculator
+    // //파라미터명 n1, n2, operator
+    // //return 계산된 값
+
+    // function add(n1, n2) { //더하는 함수
+    //   return n1 + n2;
+    // }
+
+    // function minus(n1, n2) { //뺄셈 함수
+    //   return n1 - n2;
+    // }
+
+    // function multiple(n1, n2) { //곱하기 함수
+    //   return n1 * n2;
+    // }
+
+    // function divide(n1, n2) { //나누기 함수
+    //   return n1 / n2;
+    // }
+
+
+    // function calculator(n1, n2, operator) {
+    //   if (operator == "+") {
+    //     return add(n1, n2);
+    //   } else if (operator == "-") {
+    //     return minus(n1, n2);
+    //   } else if (operator == "*") {
+    //     return multiple(n1, n2);
+    //   } else if (operator == "/") {
+    //     return divide(n1, n2);
+    //   }
+    // }
+
+    // function calculator2(n1, n2, operator) {
+    //   //n1 + operator + n2
+    //   //4+7
+    //   // return eval("4+7");
+    //   // return 4+7;
+    // }
+
+    // // add(4,7);
+    // console.log(calculator(4, 7, "+"));
+    // console.log(calculator(4, 7, "*"));
+
+
+
+
+    // //문제. 배열안에 배열. for-loop
+    // //함수
+    // //함수명 - printArray
+    // //파라미터 - 배열
+    // //출력 - console.log
+    // var arr = [
+    //   [1, 2, 3, 4, 5],
+    //   [3, 12, 33, 24, 15, 23],
+    //   [4, 7, 12, 3, 9, 42],
+    //   [12, 32, 56, 23, 90],
+    //   [5, 9, 7, 21, 19],
+    //   [5, 9, 7, 21, 19]
+    // ];
+
+    // function printArray(arr2D) {
+    //   let len1 = arr2D.length; //6
+
+    //   for (let i = 0; i < len1; i++) {
+
+
+    //     let arr1 = arr2D[i]; // arr2D[0] //[1, 2, 3, 4, 5]
+    //     //arr2D[1] //[3, 12, 33, 24, 15,23]
+
+
+
+    //     let len2 = arr1.length; //5,
+
+    //     for (let j = 0; j < len2; j++) {
+    //       // arr1[0] //1
+    //       // arr1[1] //2
+    //       // [1, 2, 3, 4, 5][0]
+    //       console.log(arr1[j]);
+    //     }
+
+    //   }
+    // }
+
+    // // printArray(arr);
+
+    // //나이총합 - getUserAgeSum
+    // //나이평균 - getUserAgeAvg
+    // //나이제일많은나이 - getUserAgeMax
+    // //나이제일적은나이 - getUserAgeMin
+    // //전체기능 - getUserAgeMath
+
+    // function getUserAgeMath() {
+    //   let sum = 0;
+    //   let maxAge = 0; // Number.MIN_SAFE_INTEGER;
+    //   let minAge = Number.MAX_SAFE_INTEGER;
+
+    //   // let minAge = 0;
+
+    //   // if(userList.length > 0) {
+    //   //   minAge = userList[0].age;
+    //   // }
+
+    //   for (var user of userList) {
+    //     sum += user.age;
+
+    //     if (user.age > maxAge) {
+    //       maxAge = user.age;
+    //     }
+
+    //     if (user.age < minAge) {
+    //       minAge = user.age;
+    //     }
+    //   }
+
+    //   let avg = sum / userList.length;
+
+
+    //   return {
+    //     "sum": sum,
+    //     "avg": avg,
+    //     "maxAge": maxAge,
+    //     "minAge": minAge
+    //   }
+    // }
+
+    // let userMath = getUserAgeMath();
+    // console.table(userMath);
+
+    // var total = 0;
+    //reduce 파라미터 2개
+    //첫번째 - 우리가 정의한 함수가 들어가고
+    //두번째 - 초기값
+    //배열에 숫자만 담겨있으면 초기값 없어도됨.
+    //배열에 오브젝트가 담겨있으면 초기값을 반드시 설정해야 함.
+    var total = userList.reduce(function (total, user) {
+      return total + user.age;
+    }, 0);
+
+
+    console.log(total);
+
+    var nums = [3, 2, 5, 4, 1, 7];
+
+    var total = nums.reduce(function (total, value) {
+      return total + value;
+    });
+
+    console.log(total);
+
+
+
+
+    function sum() {
+      //배열에서 배열의 요소를 한개씩 읽기 시작한다.
+      //     for(var num of nums){
+
+      // }
+
+      //배열의 요소를 하나씩 읽으면서 그 값을 계속 해서 더한다.
+      var total = 0;
+      for (var num of nums) {
+        total = total + num;
+      }
+      //모든 배열 요소를 다 읽고, 모든 값을 더했으면 그 값을 반환한다.
+
+      return total;
+    }
+  </script>
+</body>
+
+</html>

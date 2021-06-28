@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //JSON 객체
+    //JSON - JavaScript Object Notation
+
+    // const newsList = 
+
+    var productList = {
+      "data": [{
+          name: "솔의눈",
+          price: 700
+        },
+        {
+          name: "커피",
+          price: 700
+        },
+        {
+          name: "파워레이드",
+          price: 1200
+        },
+        {
+          name: "오렌지",
+          price: 1000
+        },
+        {
+          name: "보리차",
+          price: 1200
+        },
+        {
+          name: "밀키스",
+          price: 800
+        }
+      ]
+    };
+
+    // console.log(productList);
+
+    var jsonString = JSON.stringify(productList);
+
+    console.log(jsonString);
+
+    var jsonObject = JSON.parse(jsonString);
+
+    console.log(jsonObject);
+  </script>
+</body>
+
+</html>

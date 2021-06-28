@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="user_data.js"></script>
+  <script src="scripts/common.js"></script>
+
+  <script>
+    // var ageGroup = getAgeGroup(userList, "age");
+    // console.table(ageGroup);
+
+    var users = [{
+        "name": "유재석",
+        "nai": 50
+      },
+      {
+        "name": "김종국",
+        "nai": 46
+      },
+      {
+        "name": "하하",
+        "nai": 41
+      }
+    ];
+
+    var ageGroup = getAgeGroup(users, "nai");
+    console.table(ageGroup);
+  </script>
+</body>
+
+</html>

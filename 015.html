@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //조건문 - if
+    // 만일 () {
+    //   뭐뭐해야지.
+    // }
+
+    // if(조건식) {
+    //   //코드선언
+    // }
+
+    var age = 20;
+    var isAdult = false;
+
+    if (age >= 19) {
+      isAdult = true;
+    }
+
+    if (isAdult) {
+      //성인에 맞는 코드를 실행해
+    } else {
+      //isAdult == false, 무조건 else 블록 코드 실행
+    }
+
+
+
+    var age = 7;
+    var isFree = false;
+
+    if (age >= 70) {
+      isFree = true;
+
+    } else if (age < 8) {
+      isFree = true;
+    }
+    // else {
+    //   isFree = false;
+    // }
+
+    //이 위치로
+
+    //
+
+    //문제1. 조건삼항 내용 if문으로 변경
+    // var greeting = (time <= 10) ? "Good morning!" : (time <= 16) ? "Good afternoon!" : (time <= 20) ? "Good evening!" : "Good night!";
+
+
+
+    //조건문 - switch
+    var d = new Date();
+    var day = d.getDay();
+    console.log("day", day);
+    var dayName = "";
+
+    var dayNames = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"];
+    console.log(dayNames[day]);
+
+
+    switch (day) {
+      case 0:
+        dayName = "일요일";
+        break;
+      case 1:
+        dayName = "월요일";
+        break;
+      case 2:
+        dayName = "화요일";
+        break;
+      case 3:
+        dayName = "수요일";
+        break;
+      case 4:
+        dayName = "목요일";
+        break;
+      case 5:
+        dayName = "금요일";
+        break;
+      case 6:
+        dayName = "토요일";
+        break;
+      default:
+        break;
+    }
+
+
+
+    // console.log("dayName", dayName);
+  </script>
+</body>
+
+</html>

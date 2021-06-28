@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="user_data.js"></script>
+  <script>
+    userList.filter(function (user) {
+      return user.gender == "female" && user.age < 40;
+    });
+
+
+
+    //Array 객체 내장 함수
+    var arr = ["A", "B", "C", "D"];
+
+    //toString();
+    console.log(arr.toString()); //a,b,c,d
+
+    //join()
+    console.log(arr.join("-"));
+
+    //pop()
+    console.log(arr.pop());
+    console.log(arr);
+    // var x = arr.pop();
+
+    //push()
+    arr.push("E");
+    console.log(arr);
+
+    //shift()
+    console.log(arr.shift());
+    console.log(arr);
+
+    //unshift()
+    arr.unshift("1");
+    console.log(arr);
+
+    //splice()
+    arr.splice(1, 0, "2", "3", "4");
+    console.log(arr);
+    //
+    // console.log(arr.splice())
+
+    //concat()
+    var myDaughter = ["남명혜", "김규비"];
+    var mySon = ["정재승", "정경민"];
+    var mySon2 = ["홍길동"];
+    var myChildren = myDaughter.concat(mySon, mySon2);
+    console.log(myChildren);
+
+    //slice()
+    var arr1 = myChildren.slice(1);
+    // console.log(arr1);
+
+    //sort()
+    var arrSort = myChildren.sort();
+    console.log(arrSort);
+    console.log(arrSort.reverse());
+
+    var points = [34, 12, 45, 22, 6, 8, 2, 54];
+    console.log(points.sort());
+
+    var p = points.sort(function (a, b) {
+      // if (a > b) return 1;
+      // else if (a < b) return -1;
+      // else return 0;
+
+      return b - a;
+    });
+
+
+
+    console.log(p);
+
+    var productList = [{
+        name: "솔의눈",
+        price: 700
+      },
+      {
+        name: "커피",
+        price: 700
+      },
+      {
+        name: "파워레이드",
+        price: 1200
+      },
+      {
+        name: "오렌지",
+        price: 1000
+      },
+      {
+        name: "보리차",
+        price: 1200
+      },
+      {
+        name: "밀키스",
+        price: 800
+      }
+    ];
+
+    var p2 = productList.sort(function (a, b) {
+      // if (a.price > b.price) return 1;
+      // else if (a.price < b.price) return -1;
+      // else return 0;
+
+      return b.price - a.price;
+    });
+
+    console.table(p2);
+
+    // var points = [34, 12, 45, 22, 6, 8, 2, 54];
+
+    // function sort(func) {
+    //   var len = points.length;
+    //   for(var i=0 ; i<len ; i++) {
+    //     if(func(points[i], points[i+1])){
+    //       points.slice(i,i+1)
+
+    //     }
+    //   }
+    // }
+
+    // sort(function(a,b){return b - a});
+
+    //filter()
+
+    var points = [34, 12, 45, 22, 6, 8, 2, 54];
+
+    // var poinst = new Array()
+
+    //reduce()
+
+    var total = points.reduce(function (sum, currentValue) {
+      return sum + currentValue;
+    });
+    console.log("total", total);
+
+    // var total = points.reduce((sum,currentValue) => sum + currentValue);
+
+    var sum = 0;
+    for (var p of points) {
+      sum += p;
+    }
+
+
+    var output = points.filter(function (p) {
+      return p > 20;
+    });
+
+    // var output = points.filter(p => p>20);
+
+    console.table(output);
+
+    // function filter(arr, func){
+    //   var output = [];
+    //   for(var a of arr) {
+    //     if(func(a)){
+    //       output.push(a);
+    //     }
+    //   }
+
+    //   return output;
+    // }
+
+    // filter(points, function(p){
+    //   return p > 20;
+    // });
+
+    var output = userList.filter(function (user) {
+      return user.gender == "male" && (user.age <= 25 || user.age >= 35);
+    });
+
+    console.table(output);
+
+    //map()
+    var userList = [{
+        firstName: "재석",
+        lastName: "유",
+        email: "yu@gmail.com"
+      },
+      {
+        firstName: "종국",
+        lastName: "김",
+        email: "kim@gmail.com"
+      },
+      {
+        firstName: "세찬",
+        lastName: "양",
+        email: "yang@gmail.com"
+      },
+      {
+        firstName: "석진",
+        lastName: "지",
+        email: "ji@gmail.com"
+      }
+    ];
+
+    userList.map(function (user) {
+      return {
+        "firstName": user.firstName,
+        "lastName": user.lastName,
+        "email": user.email,
+        "fullName": user.firstName + user.lastName
+      }
+    });
+  </script>
+</body>
+
+</html>

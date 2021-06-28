@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var x = 123;
+    x.toString();
+    // x + "";
+
+    //toExponential();
+
+    //toFixed()
+    var x = 9.656; //Number 객체
+    console.log(x.toFixed(4));
+
+    //toPrecision()
+    console.log(x.toPrecision(2));
+
+    //parseInt()
+    var x = "10";
+    console.log(parseInt(x));
+    console.log(parseInt("10.124"));
+    console.log(parseInt("10.66"));
+    console.log(parseInt("40 20 30"));
+    console.log(parseInt("10 years"));
+    console.log(parseInt("years 10")); // Not a Number
+
+    //parseFloat()
+    console.log(parseFloat("10.124"));
+
+
+    console.log(Number.MAX_VALUE);
+    console.log(Number.MAX_SAFE_INTEGER);
+    console.log(Number.MIN_VALUE);
+    console.log(Number.MIN_SAFE_INTEGER);
+    console.log(Number.POSITIVE_INFINITY);
+    console.log(Number.NEGATIVE_INFINITY);
+
+    // console.log(3 / 0);
+  </script>
+</body>
+
+</html>

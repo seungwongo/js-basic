@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // new Date()
+    var now = new Date(); //사용자 브라우저의 시간을 가져옵니다.
+    console.log(now); //Fri Jun 25 2021 05:16:49 GMT+0900 (대한민국 표준시)
+
+    // new Date(year, month, day, hours, minutes, seconds, milliseconds)
+    var d = new Date(2021, 6, 24, 10, 33, 30, 0); //특정 날짜,시간을 지정해서 Date 객체 생성
+    console.log(d); //Sat Jul 24 2021 10:33:30 GMT+0900 (대한민국 표준시)
+
+    // new Date(milliseconds)
+    var d = new Date(0); //1970년1월1일
+    var d = new Date(100000000000); //1970년1월1일 + 100000000000 = 대략 1973년3월3일
+
+    // new Date(date string)  
+    var d2 = new Date("October 13, 2014 11:13:00"); //날짜 문자열로 Date 객체 생성
+
+
+
+
+
+
+    //문제. 오늘 날짜를 반환하는 함수
+    //함수명 - getToday
+    //파라미터 - format     
+    //format 값이 "YYYY-MM-DD" 이면 2021-06-25 형식으로, "YYYY/MM/DD" 이면 2021/06/25
+    //format 값이 "MM-DD-YYYY" 이면 06-25-2021 형식
+    // YYYY는 년도, MM은 월, DD는 일자를 의미하고, 사용자가 format 형식을 지정한대로 날짜를 해당 포맷으로 변경해서 반환
+
+
+
+    //문제. 오늘 기준으로 몇일전, 몇일후 날짜 구하기(포맷 적용)
+    //함수명 - getSpecificDay
+    //파라미터1 - day (숫자 양수가 들어오면 오늘 날짜 기준으로 양수일 만큼 더한 날짜, 음수이면 반대)
+    //파라미터2 - format (날짜 포맷)
+  </script>
+</body>
+
+</html>
