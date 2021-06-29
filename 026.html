@@ -17,7 +17,6 @@
     //
 
     // console.log((new Date()).getDay());
-
     function calParkingCost(parkingHours, purchaseAmount) {
       //주말인지, 평일인지 구한다.
       const isWeekend = ((new Date()).getDay() % 6) == 0 ? true : false;
@@ -33,7 +32,6 @@
       } else if (purchaseAmount >= 50000) {
         parkingHours = parkingHours - 1;
       }
-
 
 
       if (parkingHours <= 0) {

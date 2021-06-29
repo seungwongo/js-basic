@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //Default Function Parameter - 함수의 파라미터 기본 값
+    function say(message = "파라미터가 안들어왔네요.") {
+      console.log(message);
+    }
+
+    // say("파라미터 전달");
+    say();
+
+    function add(x1 = 1, x2 = 1) {
+      return x1 + x2;
+    }
+
+    console.log(add());
+  </script>
+</body>
+
+</html>
