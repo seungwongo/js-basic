@@ -16,17 +16,21 @@
     // var data = axios.get(url);
     // console.log(data);
 
-    // function getData() {
-    //   return new Promise(function (resolve, reject) {
-    //     axios.get(url).then(function (response) {
-    //       resolve(response.data);
-    //     });
-    //   });
-    // }
+    function getData() {
+      return new Promise(function (resolve, reject) {
 
-    // getData().then(function (jsonData) {
-    //   console.log(jsonData.data);
-    // });
+        // reject(new Error("Request is failed"));
+        axios.get(url).then(function (response) {
+          resolve(response.data);
+        });
+      });
+    }
+
+    getData().then(function (jsonData) {
+      console.log(jsonData.data);
+    }).catch(function (err) {
+      console.log(err);
+    });
 
     //Async-Await
 
@@ -56,11 +60,16 @@
 
     //fetch()
 
-    fetch(url + "getUserList").then(function (response) {
-      return response.json();
-    }).then(function (data) {
-      console.log(data);
-    });
+    // fetch(url + "getUserList").then(function (response) {
+    //   return response.json();
+    // }).then(function (data) {
+    //   console.log(data);
+    //   for (var user of data.data) {
+    //     if (user.gender == "female") {
+    //       console.log(user);
+    //     }
+    //   }
+    // });
   </script>
 </body>
 
