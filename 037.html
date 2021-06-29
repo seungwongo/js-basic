@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+  <script>
+    //Promise
+    const url = "https://9e98c7ae-287c-469f-bb47-6df9b7b32036.mock.pstmn.io/";
+
+    // var data = axios.get(url);
+    // console.log(data);
+
+    // function getData() {
+    //   return new Promise(function (resolve, reject) {
+    //     axios.get(url).then(function (response) {
+    //       resolve(response.data);
+    //     });
+    //   });
+    // }
+
+    // getData().then(function (jsonData) {
+    //   console.log(jsonData.data);
+    // });
+
+    //Async-Await
+
+    // async function api(url) {
+    //   return (await axios.get(url)).data;
+    // }
+
+    // async function getData(path) {
+    //   var data = (await api(url + path));
+    //   console.log(path, data);
+    // }
+
+    // async function getUserList() {
+    //   var data = (await api(url + "getUserList"));
+    //   console.log(data);
+    // }
+
+    // async function getDrinkList() {
+    //   var data = (await api(url + "getDrinkList"));
+    //   console.log(data);
+    // }
+
+    // getUserList();
+
+    // getData("getUserList");
+    // getData("getDrinkList");
+
+    //fetch()
+
+    fetch(url + "getUserList").then(function (response) {
+      return response.json();
+    }).then(function (data) {
+      console.log(data);
+    });
+  </script>
+</body>
+
+</html>

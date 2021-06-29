@@ -16,3 +16,7 @@ var score = {
   // student: "John Doe",
   socre: 95
 };
+
+// score.student
+// score["student"]
+// score[type]
