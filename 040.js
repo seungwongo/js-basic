@@ -28,6 +28,6 @@
 //aaa234@abc.co.kr
 //afef@foeof
 //e
-var regexp4 = /^\w+@\w+(\.\w{2,3})+$/;
+var regexp4 = /^(\w+\d*)+@\w+(\.\w{2,3})+$/;
 
-console.log(regexp4.test("seun@gmail.com"));
+console.log(regexp4.test("seun3333@gmail.com"));
