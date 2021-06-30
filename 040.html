@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" name="txtABC" id="txt1"><br>
+  <input type="text" name="" id="txt2"><br>
+
+
+  <p>ABC</p>
+  <p>DEF</p>
+
+  <h2>당신이 관심있어 하는 프로그래밍 언어는?</h2>
+  <label for="">
+    <input type="checkbox" name="chk_interest" id="" value="js"> 자바스크립트
+  </label>
+  <label for="">
+    <input type="checkbox" name="chk_interest" id="" value="html"> HTML
+  </label>
+  <label for="">
+    <input type="checkbox" name="chk_interest" id="" value="css"> CSS
+  </label>
+
+  <div>
+    <label><input type="radio" name="city" id="" value="제주">제주</label>
+    <label><input type="radio" name="city" id="" value="서울">서울</label>
+    <label><input type="radio" name="city" id="" value="부산">부산</label>
+  </div>
+
+  <div style="margin-top: 20px;">
+    <button onclick="myFunction(event);" id="btnSave" style="padding:10px;">저장</button>
+  </div>
+
+
+  <script>
+    function myFunction(e) {
+      // var btnEle = document.querySelector("#btnSave");
+      var btnEle = e.target;
+      // console.log(e);
+      btnEle.disabled = true;
+
+      setTimeout(function () {
+        btnEle.disabled = false;
+      }, 2000);
+
+      // var ele = document.getElementById("txt1");
+      // console.log(ele);
+
+      // var ele = document.querySelector("#txt1");
+      // console.log(ele);
+
+      // var txt1Value = ele.value;
+      // console.log(txt1Value);
+
+      // var ele2 = document.getElementById("txt2");
+      // ele2.value = "가나다";
+      // ele2.setAttribute("value", "가나다");
+
+      // var pTag = document.getElementsByTagName("p");
+      // console.log(pTag);
+
+      // document.querySelectorAll("p");
+
+      // var chks = document.getElementsByName("chk_interest");
+      // // console.log(chks);
+
+      // document.querySelectorAll("[name=chk_interest]");
+
+      // for (var chk of chks) {
+      //   if (chk.checked) {
+      //     console.log(chk.value);
+      //   }
+      // }
+
+      // var checkedItems = document.querySelectorAll("[name=chk_interest]:checked");
+      // for (var chk of checkedItems) {
+      //   console.log(chk.value);
+      // }
+
+      // var rdoCities = document.getElementsByName("city");
+      // for (var city of rdoCities) {
+      //   if (city.checked) {
+      //     console.log(city.getAttribute("value"));
+      //   }
+      // }
+
+      // console.log(document.querySelector("[name=city]:checked").value);
+
+
+
+      // document.getElementsByClassName
+
+      //
+    }
+  </script>
+</body>
+
+</html>

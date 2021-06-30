@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+  <style>
+    table,
+    th,
+    td {
+      border-collapse: collapse;
+    }
+
+    table {
+      width: 100%;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <select id="sel_gender">
+    <!-- <option value="male">남자</option>
+    <option value="female">여자</option> -->
+  </select>
+  <button onclick="doSearch();">조회</button>
+  <table>
+    <thead>
+      <tr>
+        <th>이름</th>
+        <th>성별</th>
+        <th>회사</th>
+      </tr>
+    </thead>
+    <tbody id="tb"></tbody>
+  </table>
+
+  <script src="user_data.js"></script>
+  <script>
+    var genderOption = [{
+        v: "male",
+        t: "남자"
+      },
+      {
+        v: "female",
+        t: "여자"
+      },
+    ];
+    var selH = [];
+    for (var gender of genderOption) {
+      // selH.push('<option value="' + gender.v + '">' + gender.t + '</option>');
+      selH.push(`<option value="${gender.v}">${gender.t}</option>`);
+    }
+
+
+
+    document.getElementById("sel_gender").innerHTML = selH.join("");
+
+    function doSearch() {
+      var gender = document.getElementById("sel_gender").value;
+      var h = [];
+      for (var user of userList) {
+        if (gender == user.gender) {
+          h.push('<tr>');
+          h.push('<td>' + user.name + '</td>');
+          h.push('<td>' + user.gender + '</td>');
+          h.push('<td>' + user.company + '</td>');
+          h.push('</tr>');
+        }
+
+      }
+
+      // console.log(h.join(""));
+
+      document.getElementById("tb").innerHTML = h.join("");
+    }
+  </script>
+</body>
+
+</html>
