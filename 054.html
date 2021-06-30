@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" name="feef" id="txt1" value="">
+  <input type="text" name="feef" id="txt2" value="">
+  <button onclick="getInputValue();">값 가져오기</button>
+  <button onclick="setInputValue();">값 넣어주기</button>
+  <button onclick="sum();">더하기</button>
+  <script>
+    function sum() {
+      var ele = document.getElementById("txt1");
+      var ele2 = document.getElementById("txt2");
+
+      console.log(parseFloat(ele.value) + parseFloat(ele2.value));
+    }
+
+    function getInputValue() {
+      var ele = document.getElementById("txt1");
+      console.log(ele.name);
+    }
+
+    function setInputValue() {
+      var ele = document.getElementById("txt1");
+      ele.name = "abc";
+    }
+  </script>
+</body>
+
+</html>

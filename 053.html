@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <button onclick="myFunction();">클릭</button>
+  <button id="btn">클릭2</button>
+  <select name="" id="sel">
+    <option value="a">a</option>
+    <option value="b">b</option>
+  </select>
+  <script>
+    function myFunction() {
+      console.log("버튼 클릭 - 함수 호출");
+    }
+
+    document.getElementById("sel").addEventListener("change", myFunction);
+  </script>
+</body>
+
+</html>

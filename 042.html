@@ -36,7 +36,13 @@
         <th>회사</th>
       </tr>
     </thead>
-    <tbody id="tb"></tbody>
+    <tbody id="tb">
+      <!-- <tr>
+        <td>Henrietta Dickerson</td>
+        <td>female</td>
+        <td>AVIT</td>
+      </tr> -->
+    </tbody>
   </table>
 
   <script src="user_data.js"></script>
@@ -52,8 +58,11 @@
     ];
     var selH = [];
     for (var gender of genderOption) {
-      // selH.push('<option value="' + gender.v + '">' + gender.t + '</option>');
-      selH.push(`<option value="${gender.v}">${gender.t}</option>`);
+      selH.push('<option value="' + gender.v + '">' + gender.t + '</option>');
+      // selH.push(`<option value="${gender.v}">${gender.t}</option>`);
+
+      //   <option value="male">남자</option>
+      // <option value="female">여자</option>
     }
 
 
@@ -73,6 +82,12 @@
         }
 
       }
+
+      // <tr>
+      //   <td>Henrietta Dickerson</td>
+      //   <td>female</td>
+      //   <td>AVIT</td>
+      // </tr>
 
       // console.log(h.join(""));
 

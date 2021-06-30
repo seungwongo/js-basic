@@ -117,6 +117,24 @@
 
     function requestDrink(drinkId) {
       let drink = drinkList.filter(d => d.drinkId == drinkId)[0];
+      // var drink = null;
+      // for (var d of drinkList) {
+      //   if (d.drinkId == drinkId) {
+      //     drink = d;
+      //     break;
+      //   }
+      // }
+
+
+
+
+
+      // let drink = {
+      //   drinkId: "1",
+      //   drinkName: "코카콜라",
+      //   price: 700,
+      //   stock: 5
+      // };
       if (drink.stock > 0) {
         if (total_input_amount >= drink.price) {
           let changes = total_input_amount - drink.price;

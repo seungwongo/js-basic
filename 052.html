@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function add(n1, n2) {
+      if (n1 != undefined && n2 != undefined) {
+        return n1 + n2;
+      } else {
+        return 0;
+      }
+    }
+
+    function add2(n1, n2) {
+      if (n1 == undefined || n2 == undefined) {
+        return 0;
+      }
+
+      //코드
+      return n1 + n2;
+    }
+
+    var sum = add2(3);
+
+    console.log(sum);
+  </script>
+</body>
+
+</html>
