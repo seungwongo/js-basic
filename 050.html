@@ -18,13 +18,13 @@
   </div>
   <br>
   <br>
-  <button onclick="requestDrink(1);">코카콜라(700원, 재고수<span id="drink_stock1">5</span>)</button>
-  <button onclick="requestDrink(2);">오렌지주스(1200원, 재고수<span id="drink_stock2">5</span>)</button>
-  <button onclick="requestDrink(3);">커피(500원, 재고수<span id="drink_stock3">5</span>)</button>
-  <button onclick="requestDrink(4);">물(700원, 재고수<span id="drink_stock4">5</span>)</button>
-  <button onclick="requestDrink(5);">보리차(1200원, 재고수<span id="drink_stock5">5</span>)</button>
-  <button onclick="requestDrink(6);">포카리(1000원, 재고수<span id="drink_stock6">5</span>)</button>
-  <button onclick="requestDrink(7);">뽀로로(1300원, 재고수<span id="drink_stock7">5</span>)</button>
+  <button onclick="requestDrink(1);" id="btnDrink1">코카콜라(700원, 재고수<span id="drink_stock1">5</span>)</button>
+  <button onclick="requestDrink(2);" id="btnDrink2">오렌지주스(1200원, 재고수<span id="drink_stock2">5</span>)</button>
+  <button onclick="requestDrink(3);" id="btnDrink3">커피(500원, 재고수<span id="drink_stock3">5</span>)</button>
+  <button onclick="requestDrink(4);" id="btnDrink4">물(700원, 재고수<span id="drink_stock4">5</span>)</button>
+  <button onclick="requestDrink(5);" id="btnDrink5">보리차(1200원, 재고수<span id="drink_stock5">5</span>)</button>
+  <button onclick="requestDrink(6);" id="btnDrink6">포카리(1000원, 재고수<span id="drink_stock6">5</span>)</button>
+  <button onclick="requestDrink(7);" id="btnDrink7">뽀로로(1300원, 재고수<span id="drink_stock7">5</span>)</button>
 
   <br>
   <br>
@@ -95,6 +95,12 @@
         total_customer_amount -= amount;
         total_vending_amount += amount;
 
+        for (var drink of drinkList) {
+          if (drink.price <= total_input_amount) {
+            document.getElementById("btnDrink" + drink.drinkId).style.backgroundColor = "yellow";
+          }
+        }
+
         document.getElementById("total_input_amount").value = total_input_amount;
         document.getElementById("total_customer_amount").value = total_customer_amount;
         document.getElementById("total_vending_amount").value = total_vending_amount;
@@ -129,6 +135,10 @@
             document.getElementById("drink_stock" + drinkId).innerText = drink.stock;
 
             output.insertAdjacentHTML("beforeend", `<p>이제 당신 지갑에는 총 ${total_customer_amount} 있습니다.</p>`);
+
+            for (var item of drinkList) {
+              document.getElementById("btnDrink" + item.drinkId).style.backgroundColor = "initial";
+            }
           } else {
             output.insertAdjacentHTML("beforeend", `<p>음료자판기에 잔돈이 없어서 ${drink.drinkName} 음료를 구매할 수 없습니다.</p>`);
           }
