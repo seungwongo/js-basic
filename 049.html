@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <button onclick="inputAmount(100);">100원</button>
+  <button onclick="inputAmount(500);">500원</button>
+  <button onclick="inputAmount(1000);">1000원</button>
+
+  <br>
+  <br>
+
+  <button onclick="requestDrink(1);">코카콜라(700원)</button>
+  <button onclick="requestDrink(2);">오렌지주스(1200원)</button>
+  <script>
+    //음료 목록
+    //코카콜라 - 700원, 오렌지주스-1200, 커피-500, 물-700원
+    //보리차 - 1200원, 포카리-1000원, 뽀로로-1300원
+    //각가의 음료는 총 5개씩 있습니다.
+
+    //고객 지갑 - 10000원
+    //음료자판기 최초 잔도 - 1000원
+
+    //동전 투입 - 100원, 500원, 1000원
+
+    let total_vending_amount = 1000;
+    let total_customer_amount = 10000;
+    let total_input_amount = 0;
+
+    let drinkList = [{
+        drinkId: "1",
+        drinkName: "코카콜라",
+        price: 700,
+        stock: 5
+      },
+      {
+        drinkId: "2",
+        drinkName: "오렌지주스",
+        price: 1200,
+        stock: 5
+      },
+      {
+        drinkId: "3",
+        drinkName: "커피",
+        price: 500,
+        stock: 5
+      },
+      {
+        drinkId: "4",
+        drinkName: "물",
+        price: 700,
+        stock: 5
+      },
+      {
+        drinkId: "5",
+        drinkName: "보리차",
+        price: 1200,
+        stock: 5
+      },
+      {
+        drinkId: "6",
+        drinkName: "포카리",
+        price: 1000,
+        stock: 5
+      },
+      {
+        drinkId: "7",
+        drinkName: "뽀로로",
+        price: 1300,
+        stock: 5
+      }
+    ];
+
+
+    function inputAmount(amount) {
+      console.log(amount);
+      //입력한 돈이 고객의 지갑에 있는 돈 보다 같거나 작은지 확인
+      //만일 작다면
+      //total_vending_amount에 투입한 amount 더하기
+      //total_customer_amount에서 투입한 amount 빼기
+      //total_input_amount에 투입한 amount 더하기
+
+      //만일 크다면
+      //선택한 투입금액은 내 지갑에 있는 돈보다 크니까.. 메시지 출력
+    }
+
+    function requestDrink(drinkId) {
+      console.log(drinkId);
+      // var drinkObj = null;
+      // for(var drink of drinkList){
+      //   if(drink.drinkId == drinkId) {
+      //     drinkObj = drink;
+      //   }
+      // }
+
+      var drink = drinkList.filter(d => d.drinkId == drinkId)[0];
+      console.log(drink);
+      //음료 목록에서 현재 선택한 음료를 가져온다.
+      //만일 선택한 음료의 재고가 남아 있다면?
+      //  만일 총 투입 금액이 음료의 가격보다 같거나 크다면?
+      //    음료를 구매하고 돌려줘야 하는 잔돈이 얼마인지 계산
+      //    만일 음료자판기에 있는 잔돈이 음료를 구매하고 돌려줘야 하는 돈보다 같거나 크다면?
+      //      고객 지갑에서 음료 구매하고 돌려받을 잔돈만큼 더하기
+      //      선택한 음료의 재고 수량에서 1 빼기
+      //      총 투입 금액 0으로 초기화
+      //      자판기 총 잔돈에서 돌려줘야 하는 잔돈 만큼 빼기
+      //    else
+      //  else
+      //else
+    }
+  </script>
+</body>
+
+</html>
