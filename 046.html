@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+  <style>
+    input {
+      width: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="tel" name="" id="" maxlength="3" onkeyup="myFunction('tel2', 3,event);">-
+  <input type="tel" name="" id="tel2" maxlength="4" onkeyup="myFunction('tel3', 4,event);">-
+  <input type="tel" name="" id="tel3" maxlength="4">
+  <input type="search" name="" id="" onkeypress="checkEnter(event);">
+  <script>
+    //key 이벤트
+    //keydown
+    //keypress
+    //keyup
+    function myFunction(id, len, e) {
+      if (e.target.value.length == len) {
+        document.getElementById(id).focus();
+      }
+      // console.log(e.type);
+      // console.log(e.target.value);
+    }
+
+    function doSearch() {
+      console.log("조회 실행");
+    }
+
+    function checkEnter(e) {
+      console.log(e.keyCode);
+      if (e.keyCode == 13) {
+        doSearch();
+      }
+    }
+  </script>
+</body>
+
+</html>

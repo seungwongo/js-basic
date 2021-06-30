@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- <button onclick="myFunction();">클릭</button>
+  <button id="btn">클릭</button> -->
+  <button id="btn">클릭</button>
+
+  <select name="" id="" onchange="selectCountry(this);">
+    <option value="">국가를 선택하세요.</option>
+    <option value="ko">대한민국</option>
+    <option value="jp">일본</option>
+  </select>
+  <select name="" id="sel_city"></select>
+  <script>
+    var cities = [{
+        countryCode: "ko",
+        cityCode: "02",
+        cityName: "서울"
+      },
+      {
+        countryCode: "ko",
+        cityCode: "064",
+        cityName: "제주"
+      },
+      {
+        countryCode: "jp",
+        cityCode: "11",
+        cityName: "도쿄"
+      }
+    ];
+
+    var oCity = {};
+    for (var city of cities) {
+      if (!oCity[city.countryCode]) {
+        oCity[city.countryCode] = [];
+      }
+
+      oCity[city.countryCode].push(city);
+    }
+
+    console.log(oCity);
+
+
+    // var oCity = {
+    //   "ko": [{
+    //       cityCode: "02",
+    //       cityName: "서울"
+    //     },
+    //     {
+    //       cityCode: "064",
+    //       cityName: "제주"
+    //     }
+    //   ],
+    //   "jp": [{
+    //     cityCode: "11",
+    //     cityName: "도쿄"
+    //   }]
+    // };
+
+    function selectCountry(ele) {
+      console.log(ele.value);
+      var h = [];
+      if (ele.value != "") {
+        console.log(oCity[ele.value]);
+        for (var city of oCity[ele.value]) {
+          h.push(`<option value="${city.cityCode}">${city.cityName}</option>`);
+        }
+      }
+
+      // console.log(h.join(""));
+
+      document.getElementById("sel_city").innerHTML = h.join("");
+    }
+
+    function myFunction() {
+      console.log("이벤트 onclick를 통해서 발생");
+    }
+    //addEventListener
+    document.getElementById("btn").addEventListener("click", function () {
+      console.log("이벤트 클릭");
+    });
+  </script>
+</body>
+
+</html>

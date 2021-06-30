@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" name="" id="" onfocus="javascript:console.log('focus 이벤트 발생');">
+  <input type="text" name="" id="" onfocus="myFunction();">
+  <input type="text" name="" id="txt">
+  <input type="text" name="" onblur="myFunction();">
+  <button id="btn" onclick="javascript:console.log('클릭');">클릭</button>
+  <script>
+    function myFunction() {
+      console.log('blur 이벤트 발생');
+    }
+
+    // document.getElementById("txt").focus();
+    // document.getElementById("btn").click();
+  </script>
+</body>
+
+</html>
