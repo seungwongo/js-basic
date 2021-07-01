@@ -483,14 +483,6 @@
     function loadCards() {
       var oCards = {};
 
-
-      // oCards = {
-      //   "CREDIT":[],
-      //   "TELECOM":[],
-      //   "POINT":[],
-      //   "OKCASHBAG":[]
-      // }
-
       for (var card of creditCards) {
         if (!oCards[card.cardType]) {
           oCards[card.cardType] = [];

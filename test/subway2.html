@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  출발역:<select name="" id="start">
+    <!-- <option value="0">영등포구구청역</option>
+    <option value="1">당산역</option> -->
+  </select>
+  도착역:<select name="" id="end"></select>
+  <label><input type="radio" name="ageGroup" id="" value="ADULT" checked> 성인일반</label>
+  <label><input type="radio" name="ageGroup" id="" value="YOUNG"> 청소년</label>
+  <label><input type="radio" name="ageGroup" id="" value="CHILD"> 어린이</label>
+  <button onclick="calculate();">요금계산</button>
+  <div id="output" style="width:100%;height:150px;border:2px solid #333;overflow-y: auto;"></div>
+  <script>
+    const subwayList = ["영등포구구청역", "당산역", "합정역", "홍대입구역", "신촌역", "이대역", "아현역", "충정로역", "시청역", "을지로3가역", "을지로4가역",
+      "동대문역사문화공원역", "신당역", "상왕십리역", "왕십리역", "한양대역", "뚝섬역", "성수역", "건대입구역", "구의역", "강변역", "잠실나루역", "잠실역", "종합운동장역",
+      "삼성역", "선릉역", "역삼역", "강남역", "서초역", "방배역", "사당역", "낙성대역", "서울대입구역", "봉천역", "신림역", "신대방역", "구로디지털단지역", "대림역",
+      "신도림역", "문래역"
+    ];
+
+    const intervalDistance = 3170;
+    //성인일반 - 기본운임 : 10km 이내 - 1250원
+    //청소년 - 기본운임 : 10km 이내 - 720원
+    //어린이 - 기본운임 : 10km 이내 - 450원
+
+    //[추가운임]
+    //10~50km 이내 - 5km 마다 100원 추가
+    //50km 초가 - 8km 마다 100원 추가
+
+    //
+
+    function calculate() {
+      const start = parseInt(document.getElementById("start").value);
+      const end = parseInt(document.getElementById("end").value);
+      const ageGroup = document.querySelector("[name=ageGroup]:checked").value;
+      const output = document.getElementById("output");
+
+      console.log("출발역", start);
+      console.log("도착역", end);
+      console.log("유형", ageGroup);
+
+      if (start == end) {
+        return output.insertAdjacentHTML("beforeend", '<p>출발역과 도착역은 같을 수 없습니다.</p>');
+      }
+
+      var stationCount = 0;
+      if (end > start) {
+        stationCount = end - start;
+      } else {
+        stationCount = subwayList.length - start + end;
+      }
+
+      const distance = stationCount * intervalDistance;
+
+      console.log("총 이동거리", distance);
+
+      const cost = calculateSubwayCost(distance, ageGroup);
+      console.log("지하철요금", cost);
+
+    }
+
+    function calculateSubwayCost(distance, ageGroup) {
+      const baseAmount = (ageGroup == "ADULT") ? 1250 : (ageGroup == "YOUNG") ? 720 : 450;
+
+      if (distance <= 10000) {
+        return baseAmount;
+      } else if (distance <= 50000) {
+        return baseAmount + (Math.ceil((distance - 10000) / 5000) * 100);
+      } else {
+        return baseAmount + ((40000 / 5000) * 100) + (Math.ceil((distance - 50000) / 8000) * 100);
+      }
+    }
+
+    function loadSubway() {
+      var h = [];
+      for (var idx in subwayList) {
+        h.push(`<option value="${idx}">${subwayList[idx]}</option>`);
+      }
+
+      document.getElementById("start").innerHTML = h.join("");
+      document.getElementById("end").innerHTML = h.join("");
+    }
+
+    loadSubway();
+  </script>
+</body>
+
+</html>
