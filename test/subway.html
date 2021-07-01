@@ -38,6 +38,21 @@
     //요금을 계산해서 화면에 보여준다.
     //지하철은 한방향으로만 운행합니다.
 
+    //출발역과 도착역을 가져와서 두 역의 사이에 몇개의 역이 있는지 확인하다.
+
+    //출발역이 어느 역인지 가져옵니다. 
+    //도착역이 어느 역인지 가져옵니다. 
+    //출발역과 도착역이 같은지 확인하고, 같으면 출발역과 도착역 같아고 보여주고 요금 계산을 하지 않습니다.
+    //도착역에서 출발역 사이의 몇개의 역이 있는지 계산합니다.
+    //출발역과 도착역의 값을 역이름이 아니고, 인덱스번호로 만들면, 출발역과 도착역 사이의 몇개의 역이 있는지 알수 있다.
+    //
+    //도착역과 출발역 사이의 총 역수에 역마다 거리인 3170미터를 곱해서 총 이동 거리를 계산합니다.
+    //총 이동 거리가 10km 이내이면 기본요금입니다. 기본요금은 성인인 경우 1250원, 청소년은 720원, 어린이는 450원입니다.
+    //이동 거리가 10km 이내이면 성인이면 1250원
+    //이동 거리가 10km 이내이면 청소년이면 720원
+    //이동 거리가 10km 이내이면 어린이는 720원
+
+
     function calculate() {
       const start = document.getElementById("start").value;
       const end = document.getElementById("end").value;
@@ -58,7 +73,7 @@
       }
 
 
-      const distance = stationCount * intervalDistance;
+      const distance = stationCount * intervalDistance; //총 이동거리
 
       const cost = calSubwayCost(distance, type);
 
@@ -69,6 +84,15 @@
       output.insertAdjacentHTML("beforeend", `<p>총 요금은 ₩${cost}입니다.</p>`);
       output.scrollTop = output.scrollHeight;
     }
+
+
+    //성인일반 - 기본운임 : 10km 이내 - 1250원
+    //청소년 - 기본운임 : 10km 이내 - 720원
+    //어린이 - 기본운임 : 10km 이내 - 450원
+
+    //[추가운임]
+    //10~50km 이내 - 5km 마다 100원 추가
+    //50km 초가 - 8km 마다 100원 추가
 
     function calSubwayCost(distance, type) {
       const baseAmount = (type == "ADULT") ? 1250 : (type == "YOUNG") ? 720 : (type == "CHILD") ? 450 : 0;
