@@ -88,6 +88,11 @@
       }
     ];
 
+    /**
+     * 고객이 투입한 금액을 처리하는 함수
+     * 고객이 금액을 투입하면, 고객의 지갑에서는 금액만큼 빼주고, 고객의 투입한 총금액은 증가시키고, 자판기가 가지고 있는 금액을 증가
+     * @param {Number} amount 
+     */
     function inputAmount(amount) {
       var output = document.getElementById("output");
       if (amount <= total_customer_amount) {
@@ -115,6 +120,12 @@
       output.scrollTop = output.scrollHeight;
     }
 
+    /**
+     * 고객이 선택한 음료를 처리하는 함수
+     * 고객이 음료를 선택하면, 선택한 음료의 가격이 고객의 투입한 총 금액 보다 작은지를 확인하고, 음료 구매 가능 여부 확인
+     * 자판기에 있는 금액, 고객 지갑 금액, 투입 금액을 재계산함.
+     * @param {Number} drinkId 
+     */
     function requestDrink(drinkId) {
       let drink = drinkList.filter(d => d.drinkId == drinkId)[0];
       if (drink.stock > 0) {
