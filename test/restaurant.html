@@ -483,6 +483,14 @@
     function loadCards() {
       var oCards = {};
 
+
+      // oCards = {
+      //   "CREDIT":[],
+      //   "TELECOM":[],
+      //   "POINT":[],
+      //   "OKCASHBAG":[]
+      // }
+
       for (var card of creditCards) {
         if (!oCards[card.cardType]) {
           oCards[card.cardType] = [];
@@ -493,7 +501,7 @@
 
       for (key in oCards) {
         var h = [];
-        h.push(`<option value="">${cardTypes.filter(c => c.cardType == key)[0].title}을 선택하세요.</option>`);
+        h.push(`<option value="">${cardTypes.filter(c => c.cardType == key)[0].title} 선택하세요.</option>`);
         for (card of oCards[key]) {
           h.push(`<option value="${card.discount}">${card.cardName}</option>`);
         }
@@ -578,6 +586,13 @@
 
     loadMenus();
     loadCards();
+
+    //화면 그리는 부분 : loadMenus(), loadCards();
+    //메뉴클릭하면 -> selectFood(): 테이블 선택한 메뉴를 추가하는 역할
+    //선택한 메뉴의 수량을 변경하면 -> changeLineSum() : 메뉴별 합계를 계산하고 -> calculateTotalAmount() 호출 : 총합을 계산
+    //결제 금액 계산 버튼을 클릭하면 -> calculateAmount() 호출 : 선택한 할인카드 중 가장 할인율이 높은 할인율을 가져옴, 중복할인인지 체크
+    //중복할인이면 전체 금액에서 먼저 중복할인 금액 부터 빼고, 그 다음 선택한 할인카드 높은 할인율을 적용
+    //중복 불가능이면, 쿠폰을 통한 할인 금액과, 선택한 할인카드 중 할인율이 높은 금액 중 큰 금액으로 전체 금액 계산
   </script>
 </body>
 
